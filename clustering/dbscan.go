@@ -1,10 +1,12 @@
 package clustering
 
 import (
+	"math/big"
+
+	"gonum.org/v1/gonum/mat"
+
 	"github.com/sjwhitworth/golearn/base"
 	"github.com/sjwhitworth/golearn/metrics/pairwise"
-	"gonum.org/v1/gonum/mat"
-	"math/big"
 )
 
 // DBSCANParameters describes the parameters of the density-based
@@ -71,7 +73,7 @@ func DBSCAN(inst base.FixedDataGrid, params DBSCANParameters) (ClusterMap, error
 	// expandCluster adds P to a cluster C, visiting any neighbours
 	expandCluster := func(p int, neighbours *big.Int, c int) {
 		if clustered.Bit(p) == 1 {
-			panic("Shouldn't happen!")
+			return
 		}
 		// Add this point to cluster C
 		if _, ok := clusterMap[c]; !ok {
