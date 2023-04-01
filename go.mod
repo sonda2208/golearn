@@ -10,3 +10,5 @@ require (
 	github.com/smartystreets/goconvey v1.6.4
 	gonum.org/v1/gonum v0.8.1
 )
+
+replace github.com/sjwhitworth/golearn v0.0.0-20221228163002-74ae077eafb2 => github.com/sonda2208/golearn v0.0.0-20230304024801-bfb48123d77c
